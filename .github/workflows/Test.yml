@@ -8,7 +8,6 @@ on:
      - Youri
      - Rob
      - master
-     workflow_dispatch:
 
 jobs:
   build:
@@ -28,7 +27,27 @@ jobs:
       
     - name: Build
       run: dotnet build --no-restore
-      
-    - name: Run tests
-    working-directory: ./TestsAccount
-      run: dotnet test
+    
+    - name: Set Test Title
+      run: | 
+            if ${{ github.event_name == 'pull_request' }}
+            then
+              echo "::set-env name=title::Test Run for PR #${{steps.PRNUMBER.outputs.pr}} (${{github.run_number}})"
+              echo "::set-env name=file_name::TestReport.${{steps.PRNUMBER.outputs.pr}}.${{github.run_number}}.md"
+            else
+              echo "::set-env name=title::Test Run ${{github.run_number}}"
+              echo "::set-env name=file_name::TestReport.${{github.run_number}}.md"
+            fi
+    
+    # run tests with built project
+    - name: Test PR      
+      run: dotnet test --no-restore --no-build --configuration $config --logger:"liquid.md;LogFileName=${{github.workspace}}/${{env.file_name}};Title=${{env.title}};"
+    
+    # add report as PR comment (if PR)
+    - name: comment PR
+      uses: machine-learning-apps/pr-comment@master
+      if: ${{ github.event_name == 'pull_request' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        path: ${{env.file_name}}
