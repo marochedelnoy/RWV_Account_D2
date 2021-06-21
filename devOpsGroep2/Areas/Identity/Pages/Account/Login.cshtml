@@ -6,11 +6,11 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
+<div class="row" style="margin-left:auto; margin-right:auto;"
+    <div class="col-md-6">
         <section>
             <form id="account" method="post">
-                <h4>Gebruik een geregistreerd account om in te loggen.</h4>
+                <h5>Gebruik een geregistreerd account om in te loggen.</h5>
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
@@ -38,9 +38,9 @@
                     @*<p>
                         <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                     </p>*@
-                    <p>
+                    @*<p>
                         <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
+                    </p>*@
                 </div>
             </form>
         </section>

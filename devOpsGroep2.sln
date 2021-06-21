@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devOpsGroep2", "devOpsGroep2\devOpsGroep2.csproj", "{68EB766E-9B72-403E-BF2D-72BEAC1514C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "devOpsGroep2API", "devOpsGroep2API\devOpsGroep2API.csproj", "{5D6118BF-4CA7-4BF7-A43D-43F8F9594B6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{68EB766E-9B72-403E-BF2D-72BEAC1514C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68EB766E-9B72-403E-BF2D-72BEAC1514C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68EB766E-9B72-403E-BF2D-72BEAC1514C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6118BF-4CA7-4BF7-A43D-43F8F9594B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6118BF-4CA7-4BF7-A43D-43F8F9594B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6118BF-4CA7-4BF7-A43D-43F8F9594B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6118BF-4CA7-4BF7-A43D-43F8F9594B6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
